@@ -9,7 +9,8 @@ namespace HelloWorld
         public void Run()
         {
             //This variable stores health, the .0f helps store decimal values
-            float health = 100.0f;  
+            float health = 100.0f;
+            float money = 420.0f;
             //Im going to want to be able to alter this value
             float foodpoisoning = 20;
             bool maxLevelReached = false;
@@ -34,12 +35,19 @@ namespace HelloWorld
             Console.WriteLine("Here's your" + food);
             Console.WriteLine("press ENTER key to eat");
             Console.ReadLine();
-            Console.WriteLine("WARNING: You have leveled up to food poisoning lvl 1");
-            Console.WriteLine("You took " + foodpoisoning + " damage!");
-            Console.ReadLine();
-            Console.Clear();
             Console.WriteLine("You have learned a new level of foodpoisoning");
             Console.WriteLine(name + " is now level " + level + " of food poisoning");
+            Console.WriteLine("You took " + foodpoisoning + " damage!");
+            Console.WriteLine("You and Cashier are now enemies");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(name + "'s Stats");
+            Console.WriteLine(name + "'s health is now" + health);
+            Console.WriteLine(name + "'s Food Poisoning is level" + level);
+            Console.WriteLine(name + " has " + money + "to his name");
+            
+            
+            
             Console.ReadLine();
 
 
