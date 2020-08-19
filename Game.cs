@@ -17,14 +17,15 @@ namespace HelloWorld
             //Im going to want to be able to alter this value
             // I can take the food poisoning level and multiply it by the damage
             float foodpoisoning = 20;
-            bool maxLevelReached = false;
-            int maxLevel = 100;
+            bool scrapedknee = false;
             //I think it would be funny for levels to be severity of the food poisoning maybe an RNG system?
-            int level = 1;
-            bool ready = true;
+            int level = 1;            
             string food = "Nothing";
 
+
             //POV you're at a bad mcdonalds
+
+
             Console.WriteLine("Cashier: Hello and welcome to Mcdonald what is your name?");
             //Using Console.Readline() works as a wait command
             string name = Console.ReadLine();
@@ -34,6 +35,9 @@ namespace HelloWorld
             
             //char is used to hold the placeholder of a character not a value, 1-9 can have the # value but in this case it is used as the key itself
             //it is possible to use a letter but they may be case sensitive
+            //if then is actually if else or else if. the command if allows for the use of a hypothetical
+            // the use of else allows an if nothing else
+            //the use of else if allows an if not the first maybe this one?
             char foodinput = Console.ReadKey().KeyChar;
             if (foodinput == '1')
             {
@@ -124,6 +128,7 @@ namespace HelloWorld
                     Console.WriteLine("You run home out of embarrassment.");
                     Console.WriteLine("Unfortunately you fall on the way home and scrape your knee \n You Took 8 damage");
                     health -= 8;
+                    scrapedknee = true;
                     Console.WriteLine("You now have " + health + "health");                     
                     goto phase2;
                 }
@@ -145,7 +150,14 @@ namespace HelloWorld
                 Console.WriteLine("You are back to " + health + " health");
                 goto phase2;
             }
-        phase2:
+        phase2: // Achievement how did we get here
+            // Since I wont remember this friday when i assume we will work on this again, for phase 2
+            // i want to implement something else random yet mildly entertaining
+            // so brainstorming player was at mcdonalds and got food poisoning then goes home to rest
+            //basically a fresh start but where does it go from here
+            //maybe have the scrapped knee catch infection so i would need to make a bool value so
+            // like if scrapedknee=true then have it get infected then gangreen then game over
+            //kinda want this game to be a one true way kinda thing 
             Console.ReadLine();
 
         }
