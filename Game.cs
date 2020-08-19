@@ -158,8 +158,13 @@ namespace HelloWorld
             //maybe have the scrapped knee catch infection so i would need to make a bool value so
             // like if scrapedknee=true then have it get infected then gangreen then game over
             //kinda want this game to be a one true way kinda thing 
+            Console.Clear();
             Console.ReadLine();
+            if (scrapedknee = true)
+            {
+                Console.WriteLine("Your scraped knee has affected you dearly. \nYou now walk with a limp");
 
+            }
         }
     }
 }
