@@ -8,163 +8,134 @@ namespace HelloWorld
     {
         public void Run()
         {
-        Spawn:
-            Console.Clear();
-            //This variable stores health, the .0f helps store decimal values
+            string role = "Undefined";
             float health = 100.0f;
-            double money = 420.0f;
-            double justbought = 0;
-            //Im going to want to be able to alter this value
-            // I can take the food poisoning level and multiply it by the damage
-            float foodpoisoning = 20;
-            bool scrapedknee = false;
-            //I think it would be funny for levels to be severity of the food poisoning maybe an RNG system?
-            int level = 1;            
-            string food = "Nothing";
+            float stamina = 100.0f;
+            bool melee = false;
+            bool strategy = false;
+            bool ranged = false;
+            bool BluntForce = false;
 
 
-            //POV you're at a bad mcdonalds
+            Console.WriteLine();
+            Console.WriteLine("                                      WELCOME TO HOMIEGANG ZOMBIETEXTGAME");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("First a lil backstory, you are just some guy that magically exists in the middle of an apocalypse");
+            Console.WriteLine();
+            Console.WriteLine("Majority of all life has turned undead and nothing just has immunities or whatever, there are zombie\n plants but there are still things that are un-undead like you");
+            Console.WriteLine();
+            Console.WriteLine("You're gonna start off answering some simple questions and then you're on your own.");
+            Console.WriteLine();
+            Console.WriteLine("Oh and for the sake of convienience you will enter all inputs with the numbpad or number keys unless\n specified");
+            Console.WriteLine();
+            Console.WriteLine("Here's one of those special specifications now");
 
+            for (int i = 0; i <= 12; i++)
+            {
+                Console.WriteLine();
+            }
 
-            Console.WriteLine("Cashier: Hello and welcome to Mcdonald what is your name?");
-            //Using Console.Readline() works as a wait command
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+        Naming:
+            Console.Clear();
+            Console.WriteLine("                  Please Type Your Name below this can not be changed later, or maybe it can we'll see");
             string name = Console.ReadLine();
-            OrderHere:
-            Console.WriteLine("Cashier: Alright " + name + " what you want to eat?");
-            Console.WriteLine("Options Below  \nPress 1 for Burger  \nPress 2 for FrenchFry   \nPress 3 for Nuggies \nPress 4 for a bug");
-            
-            //char is used to hold the placeholder of a character not a value, 1-9 can have the # value but in this case it is used as the key itself
-            //it is possible to use a letter but they may be case sensitive
-            //if then is actually if else or else if. the command if allows for the use of a hypothetical
-            // the use of else allows an if nothing else
-            //the use of else if allows an if not the first maybe this one?
-            char foodinput = Console.ReadKey().KeyChar;
-            if (foodinput == '1')
+            Console.WriteLine("        You have entered " + name + "!");
+            Console.WriteLine("        Are there any typos?");
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
+        Inbetween:
+            char namecheck = Console.ReadKey().KeyChar;
+            if (namecheck == '1')
             {
-                food = "Burger";
-                foodpoisoning = 5;
-                justbought = 2.30;                
+                Console.WriteLine("Well then write it right next time");
+                Console.ReadKey();
+                goto Naming;
             }
-            else if (foodinput == '2')
+            else if (namecheck == '2')
             {
-                food = "FrenchFry";
-                foodpoisoning = 3;
-                justbought = .50;
-            }
-            else if (foodinput == '3')
-            {
-                food = "Nuggies";
-                foodpoisoning = 100;
-                justbought = 5;
-            }
-            else if (foodinput == '4')
-            {
-                food = "bug";
-                foodpoisoning = 30;
-                justbought = 1;
+                goto NamingDone;
             }
             else
             {
-                Console.WriteLine("Bro did I Stutter???");
-                goto OrderHere;
+                Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                goto Inbetween;
             }
-            money -= justbought;
-            Console.WriteLine("Cashier: Aight I gotchu one " + food + " give me a minute, read this while you wait.");
-            Console.WriteLine("press ENTER to continue");
-            Console.ReadLine();
-            Console.WriteLine(name + "'s health is currently " + health + " don't ask why you have health");            
-            Console.WriteLine("You ordered " + food);
-            Console.WriteLine("You are now $" + justbought + " lighter for a total of " + money);
-            Console.WriteLine("press ENTER to continue");
-            Console.ReadLine();
-            Console.WriteLine("Here's your " + food);
-            Console.WriteLine("press ENTER key to eat");
-            Console.ReadLine();
-            Console.WriteLine("You have learned a new level of foodpoisoning");
-            Console.WriteLine(name + " is now level " + level + " of food poisoning");
-            Console.WriteLine("You took " + foodpoisoning + " damage!");
-            health -= foodpoisoning;
-            if (health == 70)
-            {
-                Console.WriteLine("Distant Voice: Why would you eat the bug?");
-            }
-            Console.WriteLine("You and Cashier are now enemies");
-            Console.ReadLine();
-            //BRAND NEW SCREEN
+        NamingDone:
             Console.Clear();
-            Console.WriteLine(name + "'s Stats");
-            Console.WriteLine(name + "'s health is now " + health);
-            Console.WriteLine(name + "'s Food Poisoning is level " + level);
-            Console.WriteLine(name + " has $" + money + " to his name");
-            Console.ReadLine();
-            Console.Clear();
-            //BRAND NEW SCREEN
-            Console.WriteLine("Thoughts: You're here with only a few options, tummy hurts and shit, just wasted $" + justbought + " and nothing really to do about it.");
-            Console.WriteLine("1 for Well actually I think im gonna sue \n2 for Well Actually I think im gonna assault the cashier \n3 for Well Actually I think im gonna go home");
-            char thoughtprocessone = Console.ReadKey().KeyChar;
-            if (thoughtprocessone == '1')
-            {
-                Console.Clear();
-                Console.WriteLine("You decided to challenge McDonalds in a law suit \nMcDonalds splashes scolding hot coffee at you in court \nYou have taken 15 Damage from Coffee");
-                health -= 15;
-                Console.ReadKey();
-                Console.WriteLine("You now have " + health + " health");
-                Console.WriteLine("You lose the lawsuit and now everything you own has been McStolen");
-                Console.ReadKey();
-                Console.WriteLine("Even your McLife,\nYou Perish");
-                Console.ReadKey();
-                goto Spawn;
+            Console.WriteLine("                                              SELECT A KIT FROM BELOW");
+            Console.WriteLine("                  OPTION 1          OPTION 2             OPTION 3            OPTION 4");
+            Console.WriteLine("                  INSANE            LOGICAL              DUMB AS DIRT        GIFTED");
+            Console.WriteLine("                  strong            smart                dumb                lucky   ");
+            Console.WriteLine("                  irrational        rational             ignorant        quick thoughts");
+            Console.WriteLine("                  Instigator        Cautious          Accident Prone         Deescalator ");
+            Console.WriteLine("                  130 Health        100 Health           200 Health         80 Health");
+            Console.WriteLine("                  200 Stamina       150 Stamina          300 Stamina        100 Stamina");
+            Console.WriteLine("                 Prefer Melee       Prefer Strat         Prefer BluntForce  Prefer Ranged ");
+        RoleFuckUp:
+            char roleinput = Console.ReadKey().KeyChar;
 
-            }
-            else if (thoughtprocessone == '2')
+            if (roleinput == '1')
             {
-                Console.WriteLine("You assault the Cashier in a blind rage, but as you're already sick from food poisoning the cashier wins.");
-                Console.WriteLine("Now you owe the cashier $50 or he will take your lunch money daily \nDo You Pay? \n1 For im so sorry here \n2 For Nah");
-                char thoughtprocessesonedotone = Console.ReadKey().KeyChar;
-                if (thoughtprocessesonedotone == '1')
-                {
-                    money -= 50;
-                    Console.WriteLine("You now have $" + money + "left.");
-                    Console.WriteLine("You run home out of embarrassment.");
-                    Console.WriteLine("Unfortunately you fall on the way home and scrape your knee \n You Took 8 damage");
-                    health -= 8;
-                    scrapedknee = true;
-                    Console.WriteLine("You now have " + health + "health");                     
-                    goto phase2;
-                }
-                else if (thoughtprocessesonedotone == '2')
-                {
-                    Console.WriteLine("The cashier executes you on the spot \n You Took All The Damage");
-                    Console.ReadKey();
-                    Console.WriteLine("You see the light fade away from your vision");
-                    Console.ReadKey();
-                    goto Spawn;                                      
-                }
-                
+                role = "Insane";
+                health = 130.0f;
+                stamina = 200.0f;
+                melee = true;
+                goto RoleDone
+                    ;
             }
-            else if (thoughtprocessone == '3')
+            else if (roleinput == '2')
             {
-                Console.WriteLine("You decided to gome home");
-                Console.WriteLine("You are well rested and back to full health.");
-                    health = 100;
-                Console.WriteLine("You are back to " + health + " health");
-                goto phase2;
+                role = "Logical";
+                health = 100.0f;
+                stamina = 150.0f;
+                strategy = true;
+                goto RoleDone;
             }
-        phase2: // Achievement how did we get here
-            // Since I wont remember this friday when i assume we will work on this again, for phase 2
-            // i want to implement something else random yet mildly entertaining
-            // so brainstorming player was at mcdonalds and got food poisoning then goes home to rest
-            //basically a fresh start but where does it go from here
-            //maybe have the scrapped knee catch infection so i would need to make a bool value so
-            // like if scrapedknee=true then have it get infected then gangreen then game over
-            //kinda want this game to be a one true way kinda thing 
+            else if (roleinput == '3')
+            {
+                role = "Dumb As Dirt";
+                health = 200.0f;
+                stamina = 300.0f;
+                BluntForce = true;
+                goto RoleDone;
+            }
+            else if (roleinput == '4')
+            {
+                role = "Gifted";
+                health = 80.0f;
+                stamina = 100.0f;
+                ranged = true;
+                goto RoleDone;
+            }
+            else
+            {
+                Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                goto RoleFuckUp;
+            }
+        RoleDone:
             Console.Clear();
-            Console.ReadLine();
-            if (scrapedknee = true)
-            {
-                Console.WriteLine("Your scraped knee has affected you dearly. \nYou now walk with a limp");
+            //I want to add an if bool(role) = true then string rolestring = bool(role) for player convienience
+            Console.WriteLine("You have selected " + role + "!" "\nYour stats are\n" + health + " Health\n" + stamina + " Stamina");
+            Console.WriteLine("Don't like it thats on you");
+            //fix above
 
-            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
