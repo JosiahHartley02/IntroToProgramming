@@ -13,6 +13,7 @@ namespace HelloWorld
             {
                 string role = "Undefined";
                 string PreferredCombat = "UNDEFINED";
+                int lockpicks = 0;
                 float health = 100.0f;
                 float stamina = 100.0f;
                 bool melee = false;
@@ -20,6 +21,10 @@ namespace HelloWorld
                 bool ranged = false;
                 bool BluntForce = false;
                 bool Dead = false;
+                bool FirstKnowledge = false;
+                bool hashairpins = false;
+                char tempchoice = 'u';
+                char anothertempchoice = ' ';
 
 
 
@@ -164,16 +169,101 @@ namespace HelloWorld
                 Console.Clear();
                 Console.WriteLine("Perspective: You open your eyes and see you are no longer in the comfort and safety of the console overlord.");
                 Console.WriteLine("Perspective: While looking around you happen to notice a few things");
-                Console.WriteLine("Findings: You appear to be in a run down hotel");
+                while (anothertempchoice != '2')
+                {
+                    Console.Clear();
 
-                //fix above
+                    Console.WriteLine("Findings: You appear to be in a run down hotel bedroom with a single window, a door to the bathroom, a door to the hallway, and a bed.");
+                    Console.WriteLine("1 For Look out Window\n2 for Walk To the Bathroom\n3 for Walk to the hallway door\n4 for Go to the bed.");
+
+                    tempchoice = Console.ReadKey().KeyChar;
+                    if (tempchoice == '1')
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You walk towards the window and notice you are not close to the ground at all, multiple stories up");
+                        Console.WriteLine("Press enter to continue");
+                        FirstKnowledge = true;
+                        Console.ReadKey();
+                        continue;
+                    }
+                    else if (tempchoice == '2')
+                    {
+                        if (hashairpins = false)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("You walk towards the bathroom and are surprised by how clean it is");
+                            Console.WriteLine("On the counter you notice (5) hairpins");
+                            Console.WriteLine("1 for take hairpins\n 2 for leave hair pins");
+                        hashairpinsinterror:
+                            char insignificantchar = Console.ReadKey().KeyChar;
+                            if (insignificantchar == '1')
+                            {
+                                lockpicks += 5;
+                                Console.Clear();
+                                Console.WriteLine("You have gained (5) lockpicks for a total of" + lockpicks + "!");
+                                Console.WriteLine("You return to the bedroom");
+                                Console.WriteLine("Press enter key to continue");
+                                Console.ReadKey();
+                                continue;
+                            }
+                            else if (insignificantchar == '2')
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You return to the bedroom");
+                                Console.WriteLine("Press enter key to continue");
+                                Console.ReadKey();
+                                continue;
+                            }
+                            else
+                            {
+                                Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                                goto hashairpinsinterror;
+                            }
+                        }
+                        else if (hashairpins = true)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("You have already viewed this area.");
+                            Console.WriteLine("Press enter to continue");
+                            continue;
+                        }
+                    }
+                    else if (tempchoice == '3')
+                    {
+                        Console.Clear();
+                        bool DoorLocked = true;
+                        Console.WriteLine("You walk to the hallway door.");
+                        Console.WriteLine("1 to inspect door\n2 to walk away");
+                    doorcheckfuckup:
+                        char insignificantchar = Console.ReadKey().KeyChar;
+                        if (insignificantchar == '1')
+                        {
+                            if (DoorLocked = false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You notice the door is locked ..thankfully");
+                                Console.WriteLine("1 for unlock door\n2 for walk away");
+                                char dummychar = Console.ReadKey().KeyChar;
+                                if (dummychar == '1')
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("The door is now unlocked");
+                                }
+
+                            }
+                        }
+                    }
+                    //fix above
 
 
 
 
 
+                }
             }
         }
     }
 }
+
+
 //If you delete the last bracket and retype it it realigns whole document.
