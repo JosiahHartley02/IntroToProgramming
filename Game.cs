@@ -31,30 +31,30 @@ namespace HelloWorld
                 // void Printstats(string name, float heatlh, int damage, int level, string role)
                 //PrintStats(name, health, damage, level, role);
                 //{Console.WriteLine("player health yada yada
-                void CombatBanner(string name, float health, string enemyname, float enemyhealth, int enemydamage, int enemytype,string optionone, string optiontwo, string optionthree, string optionfour)
+                void CombatBanner(string name, float health, string enemyname, float enemyhealth, int enemydamage, int enemydefense, string enemytype,string optionone, string optiontwo, string optionthree, string optionfour)
                 {
-                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘        "+ name + "                                                                " + enemyname +"              ");
-                    Console.WriteLine("◘     Health Remaining " + health + "                                          Health Remainging " + enemyhealth + "         ");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
-                    Console.WriteLine("◘                                                            Damage " + enemydamage + "                    ◘");
-                    Console.WriteLine("◘                                                            Defense                        ◘");
-                    Console.WriteLine("◘                                                            Type                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
-                    Console.WriteLine("◘     " + optionone + "                                                       Damage " + enemydamage + "               ◘");
-                    Console.WriteLine("◘     " + optiontwo + "                                                       Defense                     ◘");
-                    Console.WriteLine("◘     " + optionthree + "                                                     Type                     ◘");
-                    Console.WriteLine("◘     " + optionfour + "                                                                              ◘");
-                    Console.WriteLine("◘                                                                                           ◘");
-                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("      "+ name + "                                                                " + enemyname +"              ");
+                    Console.WriteLine("      Health Remaining " + health + "                                                  Health Remainging " + enemyhealth + "         ");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("                                                                              Damage " + enemydamage);
+                    Console.WriteLine("                                                                              Defense "+ enemydefense);
+                    Console.WriteLine("                                                                              Type "+enemytype);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("◘     " + optionone);
+                    Console.WriteLine("◘     " + optiontwo);
+                    Console.WriteLine("◘     " + optionthree);
+                    Console.WriteLine("◘     " + optionfour);
+                    Console.WriteLine();
+                    Console.WriteLine();
                 }
                 //void ChangeName(string name, string newName)
                 //{
@@ -366,6 +366,8 @@ namespace HelloWorld
                     if (levelTwoActionOne == '1')
                     {
                         Console.Clear();
+                        CombatBanner(name, health, "Zombie", 100.0f, 13, 0, "Undead", "Throw Hands", "Throw nearby objects", "Whistle", "Run Away");
+                        Console.ReadKey();
 
                     }
                 }
