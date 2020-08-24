@@ -13,7 +13,9 @@ namespace HelloWorld
             while (GameOver != true)
             {
                 string role = "Undefined";
+                string name = "Joey";
                 string PreferredCombat = "UNDEFINED";
+                string levelTwoWinConditions = "false";
                 int lockpicks = 0;
                 float health = 100.0f;
                 float stamina = 100.0f;
@@ -26,7 +28,39 @@ namespace HelloWorld
                 string hashairpins = "false";
                 char tempchoice = 'u';
                 char anothertempchoice = ' ';
-
+                // void Printstats(string name, float heatlh, int damage, int level, string role)
+                //PrintStats(name, health, damage, level, role);
+                //{Console.WriteLine("player health yada yada
+                void CombatBanner(string name, float health, string enemyname, float enemyhealth, int enemydamage, int enemytype,string optionone, string optiontwo, string optionthree, string optionfour)
+                {
+                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘        "+ name + "                                                                " + enemyname +"              ");
+                    Console.WriteLine("◘     Health Remaining " + health + "                                          Health Remainging " + enemyhealth + "         ");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
+                    Console.WriteLine("◘                                                            Damage " + enemydamage + "                    ◘");
+                    Console.WriteLine("◘                                                            Defense                        ◘");
+                    Console.WriteLine("◘                                                            Type                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
+                    Console.WriteLine("◘     " + optionone + "                                                       Damage " + enemydamage + "               ◘");
+                    Console.WriteLine("◘     " + optiontwo + "                                                       Defense                     ◘");
+                    Console.WriteLine("◘     " + optionthree + "                                                     Type                     ◘");
+                    Console.WriteLine("◘     " + optionfour + "                                                                              ◘");
+                    Console.WriteLine("◘                                                                                           ◘");
+                    Console.WriteLine("◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘");
+                }
+                //void ChangeName(string name, string newName)
+                //{
+                //    name = newName;
+                //}
+                //ChangeName(Name, "NewName");
 
 
 
@@ -54,7 +88,7 @@ namespace HelloWorld
             Naming:
                 Console.Clear();
                 Console.WriteLine("                  Please Type Your Name below this can not be changed later, or maybe it can we'll see");
-                string name = Console.ReadLine();
+                name = Console.ReadLine();
                 Console.WriteLine("        You have entered " + name + "!");
                 Console.WriteLine("        Are there any typos?");
                 Console.WriteLine("1. Yes");
@@ -318,20 +352,32 @@ namespace HelloWorld
                         Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
                         goto tempchoicefuckup;
                     }
-
-
-
-                LEVEL2:
-                    Console.WriteLine("Findings: The hallway is well lit and there appears to be a zombie to the left side");
-                    Console.ReadKey();
-
-                    //fix above
-
-
-
-
-
                 }
+
+
+
+            LEVEL2:
+                while (levelTwoWinConditions != "true")
+                {
+                    Console.WriteLine("Findings: The hallway is well lit and there appears to be a zombie to the left side");
+                    Console.WriteLine("Findings: To the right there seems to be a stairwell");
+                    Console.WriteLine("1 for assault zombie\n2 for break for the stairwell");
+                    char levelTwoActionOne = Console.ReadKey().KeyChar;
+                    if (levelTwoActionOne == '1')
+                    {
+                        Console.Clear();
+
+                    }
+                }
+
+                    //not supposed to use goto but level one works fine if not broke dont fix
+                    //level 2 will be more of a battle enganged area so i can use functions more effectively
+
+
+
+
+
+                
             }
         }
     }
