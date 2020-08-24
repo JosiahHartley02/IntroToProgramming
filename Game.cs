@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Security;
 using System.Text;
 
 namespace HelloWorld
@@ -22,7 +23,7 @@ namespace HelloWorld
                 bool BluntForce = false;
                 bool Dead = false;
                 bool FirstKnowledge = false;
-                bool hashairpins = false;
+                string hashairpins = "false";
                 char tempchoice = 'u';
                 char anothertempchoice = ' ';
 
@@ -62,7 +63,7 @@ namespace HelloWorld
                 char namecheck = Console.ReadKey().KeyChar;
                 if (namecheck == '1')
                 {
-                    Console.WriteLine("Well then write it right next time");
+                    Console.WriteLine("Console: Well then write it right next time");
                     Console.ReadKey();
                     goto Naming;
                 }
@@ -77,7 +78,7 @@ namespace HelloWorld
                 }
             NamingDone:
                 Console.Clear();
-                Console.WriteLine("                                              SELECT A KIT FROM BELOW");
+                Console.WriteLine("   Console:                             SELECT A KIT FROM BELOW");
                 Console.WriteLine("                  OPTION 1          OPTION 2             OPTION 3            OPTION 4");
                 Console.WriteLine("                  INSANE            LOGICAL              DUMB AS DIRT        GIFTED");
                 Console.WriteLine("                  strong            smart                dumb                lucky   ");
@@ -134,9 +135,9 @@ namespace HelloWorld
             RoleDone:
                 Console.Clear();
                 //I want to add an if bool(role) = true then string rolestring = bool(role) for player convienience
-                Console.WriteLine("You have selected " + role + "!\nYour stats are\n" + health + " Health\n" + stamina + " Stamina");
-                Console.WriteLine("Your preferred method of combat is " + PreferredCombat + "!");
-                Console.WriteLine("Are You happy with your choices?");
+                Console.WriteLine("Console: You have selected " + role + "!\nYour stats are\n" + health + " Health\n" + stamina + " Stamina");
+                Console.WriteLine("Console: Your preferred method of combat is " + PreferredCombat + "!");
+                Console.WriteLine("Console: Are You happy with your choices?");
                 for (int i = 0; i <= 6; i++)
                 {
                     Console.WriteLine();
@@ -160,27 +161,28 @@ namespace HelloWorld
                 }
             level1Start:
                 Console.Clear();
-                Console.WriteLine("Alright now that you have everything that you need done selected and what not.");
-                Console.WriteLine("It's time to drop you into the waste land that is whats left of the world");
-                Console.WriteLine("But ill let you press the button yourself");
+                Console.WriteLine("Console: Alright now that you have everything that you need done selected and what not.");
+                Console.WriteLine("Console: It's time to drop you into the waste land that is whats left of the world");
+                Console.WriteLine("Console: But ill let you press the button yourself");
                 Console.WriteLine();
                 Console.WriteLine("Press Any Key to get launched to your doom");
                 Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("Perspective: You open your eyes and see you are no longer in the comfort and safety of the console overlord.");
                 Console.WriteLine("Perspective: While looking around you happen to notice a few things");
+                Console.ReadKey();
                 while (anothertempchoice != '2')
                 {
                     Console.Clear();
 
-                    Console.WriteLine("Findings: You appear to be in a run down hotel bedroom with a single window, a door to the bathroom, a door to the hallway, and a bed.");
+                    Console.WriteLine("Findings: You appear to be in a run down hotel bedroom with a single window, a door to the bathroom,\n a door to the hallway, and a bed.");
                     Console.WriteLine("1 For Look out Window\n2 for Walk To the Bathroom\n3 for Walk to the hallway door\n4 for Go to the bed.");
-
+                tempchoicefuckup:
                     tempchoice = Console.ReadKey().KeyChar;
                     if (tempchoice == '1')
                     {
                         Console.Clear();
-                        Console.WriteLine("You walk towards the window and notice you are not close to the ground at all, multiple stories up");
+                        Console.WriteLine("Actions: You walk towards the window and notice you are not close to the ground at all, multiple stories up");
                         Console.WriteLine("Press enter to continue");
                         FirstKnowledge = true;
                         Console.ReadKey();
@@ -188,20 +190,21 @@ namespace HelloWorld
                     }
                     else if (tempchoice == '2')
                     {
-                        if (hashairpins = false)
+                        if (hashairpins == "false")
                         {
                             Console.Clear();
-                            Console.WriteLine("You walk towards the bathroom and are surprised by how clean it is");
-                            Console.WriteLine("On the counter you notice (5) hairpins");
-                            Console.WriteLine("1 for take hairpins\n 2 for leave hair pins");
+                            Console.WriteLine("Findings: You walk towards the bathroom and are surprised by how clean it is");
+                            Console.WriteLine("Findings: On the counter you notice (5) hairpins");
+                            Console.WriteLine("1 for take hairpins\n2 for leave hair pins");
                         hashairpinsinterror:
                             char insignificantchar = Console.ReadKey().KeyChar;
                             if (insignificantchar == '1')
                             {
                                 lockpicks += 5;
                                 Console.Clear();
-                                Console.WriteLine("You have gained (5) lockpicks for a total of" + lockpicks + "!");
-                                Console.WriteLine("You return to the bedroom");
+                                Console.WriteLine("Info: You have gained (5) lockpicks for a total of " + lockpicks + "!");
+                                Console.WriteLine("Actions: You return to the bedroom");
+                                hashairpins = "true";
                                 Console.WriteLine("Press enter key to continue");
                                 Console.ReadKey();
                                 continue;
@@ -209,7 +212,7 @@ namespace HelloWorld
                             else if (insignificantchar == '2')
                             {
                                 Console.Clear();
-                                Console.WriteLine("You return to the bedroom");
+                                Console.WriteLine("Actions: You return to the bedroom");
                                 Console.WriteLine("Press enter key to continue");
                                 Console.ReadKey();
                                 continue;
@@ -220,39 +223,108 @@ namespace HelloWorld
                                 goto hashairpinsinterror;
                             }
                         }
-                        else if (hashairpins = true)
+                        else if (hashairpins == "true")
                         {
                             Console.Clear();
-                            Console.WriteLine("You have already viewed this area.");
+                            Console.WriteLine("Findings: You have already viewed this area.");
                             Console.WriteLine("Press enter to continue");
+                            Console.ReadKey();
                             continue;
                         }
                     }
                     else if (tempchoice == '3')
                     {
                         Console.Clear();
-                        bool DoorLocked = true;
-                        Console.WriteLine("You walk to the hallway door.");
+                        string DoorLocked = "true";
+                        Console.WriteLine("Actions: You walk to the hallway door.");
+                    doorlockviewing:
                         Console.WriteLine("1 to inspect door\n2 to walk away");
                     doorcheckfuckup:
                         char insignificantchar = Console.ReadKey().KeyChar;
                         if (insignificantchar == '1')
                         {
-                            if (DoorLocked = false)
+                            if (DoorLocked == "true")
                             {
                                 Console.Clear();
-                                Console.WriteLine("You notice the door is locked ..thankfully");
+                                Console.WriteLine("Findings: You notice the door is locked ..thankfully");
                                 Console.WriteLine("1 for unlock door\n2 for walk away");
+                            doorvalidoption:
                                 char dummychar = Console.ReadKey().KeyChar;
                                 if (dummychar == '1')
                                 {
                                     Console.Clear();
-                                    Console.WriteLine("The door is now unlocked");
+                                    Console.WriteLine("Findings: The door is now unlocked");
+                                    DoorLocked = "false";
+                                    Console.WriteLine("Press enter to stop inspecting the door");
+                                    Console.ReadKey();
+                                    goto doorlockviewing;
                                 }
-
+                                else if (dummychar == '2')
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                                    goto doorvalidoption;
+                                }
+                            }
+                            else if (DoorLocked == "false")
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Findings: The Door is unlocked");
+                                Console.WriteLine("1 for lock the door and go back to the room\n 2for leave to hallway");
+                            leaveoption:
+                                char leaveoption = Console.ReadKey().KeyChar;
+                                if (leaveoption == '1')
+                                {
+                                    continue;
+                                }
+                                else if (leaveoption == '2')
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("You enter the hallway");
+                                    Console.WriteLine("Press enter to continue");
+                                    Console.ReadKey();
+                                    goto LEVEL2;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                                    goto leaveoption;
+                                }
                             }
                         }
+                        else if (insignificantchar == '2')
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                            goto doorcheckfuckup;
+                        }
                     }
+                    else if (tempchoice == '4')
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Findings: The bed is messy and theres not much here.");
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadKey();
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR PLEASE SELECT A VALID OPTION");
+                        goto tempchoicefuckup;
+                    }
+
+
+
+                LEVEL2:
+                    Console.WriteLine("Findings: The hallway is well lit and there appears to be a zombie to the left side");
+                    Console.ReadKey();
+
                     //fix above
 
 
